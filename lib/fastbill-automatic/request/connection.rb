@@ -11,7 +11,7 @@ module Fastbill
         def setup_https
           @https             = Net::HTTP.new(API_BASE, Net::HTTP.https_default_port)
           @https.use_ssl     = true
-          @https.verify_mode = OpenSSL::SSL::VERIFY_PEER
+          @https.verify_mode = OpenSSL::SSL::VERIFY_NONE
           @https.ca_file     = File.join(ROOT_PATH, "data/fastbill.crt")
         end
 
